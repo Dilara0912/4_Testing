@@ -25,4 +25,3 @@ export default function lunaCheck(cardNumber) {
 
   return sum % 10 === 0;
 }
-

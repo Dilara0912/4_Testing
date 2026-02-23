@@ -2,7 +2,7 @@ const path = require('path');
 const webpack = require('webpack');
 const HtmlWebPackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin'); // Установите: npm install --save-dev clean-webpack-plugin
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
   target: 'web',
@@ -19,7 +19,7 @@ module.exports = {
     compress: true,
     hot: true,
     port: 5500,
-    historyApiFallback: true
+    historyApiFallback: true,
   },
   module: {
     rules: [
@@ -41,8 +41,8 @@ module.exports = {
       {
         test: /\.css$/,
         use: [
-          MiniCssExtractPlugin.loader, 
-          'css-loader'
+          MiniCssExtractPlugin.loader,
+          'css-loader',
         ],
       },
       {
@@ -52,9 +52,9 @@ module.exports = {
             loader: 'file-loader', // для Webpack 4 используем file-loader
             options: {
               name: 'images/[name].[hash].[ext]',
-            }
-          }
-        ]
+            },
+          },
+        ],
       },
     ],
   },
@@ -70,5 +70,5 @@ module.exports = {
     }),
     new webpack.HotModuleReplacementPlugin(),
   ],
-  mode: 'development'
+  mode: 'development',
 };
