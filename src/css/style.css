@@ -1,0 +1,140 @@
+.credit-card-widget {
+    max-width: 500px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background: #f9f9f9;
+    font-family: Arial, sans-serif;
+}
+
+.card-icons {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 15px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.card-icon {
+    width: 44px;
+    height: 28px;
+    object-fit: contain;
+    opacity: 0.4;
+    filter: grayscale(100%);
+    transition: all 0.3s ease;
+    border-radius: 4px;
+    background: white;
+    padding: 2px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.card-icon.active {
+    opacity: 1;
+    filter: grayscale(0%);
+    transform: scale(1.1);
+}
+
+/* Контейнер для инпута и кнопки */
+.input-group {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+    align-items: center;
+}
+
+.card-input {
+    flex: 1;  /* Занимает все доступное место */
+    padding: 12px;
+    font-size: 18px;
+    border: 2px solid #ddd;
+    border-radius: 4px;
+    font-family: monospace;
+    letter-spacing: 1px;
+    transition: border-color 0.3s;
+}
+
+.card-input:focus {
+    border-color: #4a90e2;
+    outline: none;
+}
+
+/* Зеленая кнопка справа */
+.validate-button {
+    padding: 12px 20px;
+    font-size: 14px;
+    font-weight: bold;
+    background-color: #4CAF50;  /* Зеленый цвет */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    white-space: nowrap;  /* Текст в одну строку */
+    box-shadow: 0 2px 4px rgba(76, 175, 80, 0.3);
+}
+
+.validate-button:hover {
+    background-color: #45a049;  /* Темно-зеленый при наведении */
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(76, 175, 80, 0.4);
+}
+
+.validate-button:active {
+    transform: translateY(1px);
+    box-shadow: 0 1px 2px rgba(76, 175, 80, 0.3);
+}
+
+.validation-message {
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 4px;
+    font-weight: 500;
+    text-align: center;
+    animation: slideDown 0.3s ease;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.validation-message.valid {
+    background: #e8f5e9;
+    color: #27ae60;
+    border-left: 3px solid #27ae60;
+}
+
+.validation-message.invalid {
+    background: #fdeded;
+    color: #c0392b;
+    border-left: 3px solid #c0392b;
+}
+
+/* Индивидуальные цвета для иконок */
+.card-icon.active[data-type="visa"] {
+    box-shadow: 0 0 0 2px #1a1f71;
+}
+.card-icon.active[data-type="mastercard"] {
+    box-shadow: 0 0 0 2px #ff5f00;
+}
+.card-icon.active[data-type="mir"] {
+    box-shadow: 0 0 0 2px #4caf50;
+}
+.card-icon.active[data-type="amex"] {
+    box-shadow: 0 0 0 2px #0070ba;
+}
+.card-icon.active[data-type="discover"] {
+    box-shadow: 0 0 0 2px #f5821f;
+}
+.card-icon.active[data-type="jcb"] {
+    box-shadow: 0 0 0 2px #00467f;
+}
+.card-icon.active[data-type="diners"] {
+    box-shadow: 0 0 0 2px #00467f;
+}
