@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "type": "module",
   "scripts": {
     "start": "cross-env NODE_OPTIONS=--openssl-legacy-provider webpack serve --mode development",
     "build": "cross-env NODE_OPTIONS=--openssl-legacy-provider webpack --mode production",
