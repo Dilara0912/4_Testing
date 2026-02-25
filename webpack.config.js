@@ -27,7 +27,7 @@ module.exports = {
         use: {
           loader: 'babel-loader',
         },
-      },    
+      },
       {
         test: /\.css$/,
         use: [
@@ -39,7 +39,7 @@ module.exports = {
         test: /\.(png|jpe?g|gif|svg)$/i,
         use: [
           {
-            loader: 'file-loader', 
+            loader: 'file-loader',
             options: {
               name: 'images/[name].[hash].[ext]',
             },
@@ -49,17 +49,17 @@ module.exports = {
     ],
   },
   plugins: [
-    new CleanWebpackPlugin(), 
+    new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
       template: './src/index.html',
-      inject: 'body', 
-      scriptLoading: 'blocking', 
-      minify: false, 
+      inject: 'body',
+      scriptLoading: 'blocking',
+      minify: false,
       templateParameters: false,
     }),
     new MiniCssExtractPlugin({
       filename: '[name].css',
     }),
-    new webpack.HotModuleReplacementPlugin(), 
+    new webpack.HotModuleReplacementPlugin(),
   ],
 };
